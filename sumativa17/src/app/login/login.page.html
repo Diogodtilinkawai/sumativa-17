@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<input type="text" placeholder="Tarea" [(ngModel)]="nombre">
+<input type="date" placeholder="Fecha" [(ngModel)]="fecha">
+<ion-button (click)="agregar()">Agregar</ion-button>
+<table>
+  <tr *ngFor="let item of items;let indice=index">
+    <td> {{indice+1}}
+    <td>{{item.nombre}}</td>
+    <td>{{item.fecha}}</td>
+    <td>
+      <ion-button color="danger" (click)="eliminar(indice)">Eliminar</ion-button>
+    <td>
+      <ion-label>Completado</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </td>
+  </tr>
+</table>
+</ion-content>
