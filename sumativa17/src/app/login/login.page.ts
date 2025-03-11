@@ -31,6 +31,13 @@ export class LoginPage implements OnInit {
   eliminar(index:number){
     this.items.splice(index,1);
   }
+  editar(index:number){
+
+    this.items[index].nombre=this.nombre;
+    this.nombre='';
+    this.fecha=new Date();
+    // this.items.splice(index,1);
+  }
 
   logout(){
     this.router.navigate(['home']);
