@@ -32,12 +32,12 @@ export class LoginPage implements OnInit {
   agregar(){
     if (this.nombre && this.fecha)
     {
-      this.items.push({nombre:this.nombre,fecha:this.fecha});
       this.tasks = {
         name: this.nombre,
         day: this.fecha.toString(),
         completed: false,
       }; 
+      this.items.push(this.tasks);
       this.nombre='';
       this.fecha=new Date();
 
